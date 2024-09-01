@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Player Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>🌟 Number Guessing Game</h1>
+            <p>Can you guess the secret number? First to 5 points wins!</p>
+        </div>
+        
+        <!-- Player Name Input Section -->
+        <div class="name-input-section">
+            <input type="text" id="player1Name" placeholder="Enter Player 1 Name" autocomplete="off">
+            <input type="text" id="player2Name" placeholder="Enter Player 2 Name" autocomplete="off">
+            <button class="btn start-btn" onclick="startGame()">Start Game</button>
+        </div>
+
+        <!-- Game Rules -->
+        <div class="rules" id="gameRules" style="display: none;">
+            <h2>Game Rules</h2>
+            <ul>
+                <li>Two players take turns guessing a number between 0 and 100.</li>
+                <li>If the guess is correct, the player scores a point.</li>
+                <li>The first player to reach 5 points wins the game.</li>
+                <li>Incorrect guesses will receive a hint whether the guess is too high or too low.</li>
+            </ul>
+        </div>
+
+        <!-- Game Box -->
+        <div class="game-box animated-box" id="gameBox" style="display: none;">
+            <div id="playerTurn" class="player-turn"></div>
+            <div class="input-section">
+                <input type="number" id="userInput" min="0" max="100" placeholder="Enter your guess..." autocomplete="off">
+                <button class="btn guess-btn" onclick="guessNumber()">Guess</button>
+            </div>
+            <p id="feedback" class="feedback-text"></p>
+            <div class="score-board">
+                <p id="player1Score">Player 1 Score: 0</p>
+                <p id="player2Score">Player 2 Score: 0</p>
+            </div>
+            <button class="btn reset-btn" onclick="resetGame()" id="resetButton" style="display:none;">Play Again</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
